@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://upscaly.shayxo.dev/sitemap.xml

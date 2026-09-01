@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Privacy Policy — Upscaly</title>
+<meta name="description" content="Upscaly's privacy policy. Everything is processed on your own device; nothing you upscale is ever uploaded, and no usage data is collected.">
+<link rel="icon" href="assets/icon-512.png">
+<meta name="theme-color" content="#0b0a09">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Martian+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: { extend: {
+      colors: { ink:'#0b0a09','ink-raised':'#131110',paper:'#f2f0ed',muted:'#a49c92',faint:'#6b655e',dim:'#55504a',line:'#26221e',crimson:'#a80b24','crimson-lift':'#e0566a' },
+      fontFamily: { sans:['Archivo','system-ui','sans-serif'], mono:['"Martian Mono"','ui-monospace','monospace'] },
+    } },
+  };
+</script>
+</head>
+<body class="stripe-ground">
+
+<header class="sticky top-0 z-50 border-b border-line/70 backdrop-blur-xl bg-ink/80">
+  <nav class="mx-auto flex max-w-6xl items-center gap-3 px-5 py-3.5 sm:px-8">
+    <a href="index.html" class="flex items-center gap-2.5 shrink-0">
+      <span class="h-[7px] w-[7px] rounded-[2px] bg-crimson-lift"></span>
+      <span class="text-[15px] font-bold tracking-[-0.02em]">Upscaly</span>
+    </a>
+    <div class="grow"></div>
+    <a href="index.html" class="mono text-[10px] text-muted transition-colors hover:text-paper">← Back to site</a>
+  </nav>
+</header>
+
+<main class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24">
+  <div class="eyebrow">Legal</div>
+  <h1 class="mt-4 text-[clamp(2.1rem,5vw,3.2rem)]">Privacy Policy</h1>
+  <p class="mono mt-5 text-[9.5px] text-faint">Last updated: 2 September 2026</p>
+
+  <div class="prose mt-14">
+    <p>
+      Upscaly is a photo and video upscaling tool that runs entirely on your own device.
+      This policy explains, in plain terms, what that means for your data. It covers both
+      <strong>Upscaly Studio</strong> for Windows and <strong>Upscaly for Android</strong>.
+    </p>
+
+    <h2>What Upscaly does with your files</h2>
+    <p>
+      Every image or video you upscale is processed locally, on your own CPU and GPU.
+      It is never uploaded, transmitted, or sent to us or to any third party — not for
+      processing, not for backup, not for any other reason. There is no server involved
+      in upscaling at all.
+    </p>
+    <p>
+      Your original files are never modified. Upscaly writes each result as a new file
+      and leaves the source exactly as it was.
+    </p>
+
+    <h2>What we collect</h2>
+    <p>
+      <strong>Nothing.</strong> Upscaly has no user accounts, no login, and no analytics,
+      telemetry, or crash-reporting service built into it. We have no way to see what you
+      upscale, how often you use the app, or who you are, because none of that information
+      is ever sent anywhere.
+    </p>
+
+    <h2>Network activity</h2>
+    <p>
+      Upscaly makes network requests for two purposes only:
+    </p>
+    <ul>
+      <li>
+        <strong>Downloading AI models you choose to install.</strong> Model files are fetched
+        from public repositories on GitHub. These are one-directional downloads — no image,
+        file name, or personal information is included in the request.
+      </li>
+      <li>
+        <strong>Checking for app updates</strong> (desktop only), which retrieves a small
+        version file from the app's public GitHub releases.
+      </li>
+    </ul>
+    <p>
+      As with any web request, the servers involved (GitHub's) may log standard technical
+      information such as your IP address, in line with their own privacy policies. We do
+      not operate those servers and do not receive that information.
+    </p>
+
+    <h2>Permissions</h2>
+    <p>On Android, Upscaly requests only what it needs to function:</p>
+    <ul>
+      <li><strong>Photos</strong> — Upscaly uses Android's system photo picker, which lets you choose individual photos without granting the app access to your whole photo library.</li>
+      <li><strong>Notifications</strong> — used to show upscaling progress and to tell you when a job has finished.</li>
+      <li><strong>Storage</strong> (older Android versions only) — used to save results to your gallery. Not required on modern Android versions.</li>
+      <li><strong>Internet</strong> — used only for the model downloads described above.</li>
+    </ul>
+
+    <h2>Where your results are stored</h2>
+    <p>
+      Upscaled files are saved to your own device — your gallery or chosen folder. They are
+      not backed up, synced, or mirrored anywhere by Upscaly. Deleting them is entirely up
+      to you, and once deleted they are gone; we hold no copy because we never had one.
+    </p>
+
+    <h2>Third-party models</h2>
+    <p>
+      The AI models Upscaly can download are produced and published by third parties, and are
+      distributed under their own respective licenses. Downloading a model is a request to a
+      public file host; it does not create an account or a relationship with the model's author.
+    </p>
+
+    <h2>Children's privacy</h2>
+    <p>
+      Upscaly is not directed at children and does not knowingly collect information from anyone,
+      of any age — because it does not collect information at all.
+    </p>
+
+    <h2>Changes to this policy</h2>
+    <p>
+      If this policy changes, the updated version will be posted on this page with a new
+      "last updated" date. Because Upscaly collects nothing, we don't anticipate changes that
+      would affect your data.
+    </p>
+
+    <h2>Contact</h2>
+    <p>
+      Questions about this policy can be raised on the project's
+      <a href="https://github.com/shayann07/Upscaly/issues">GitHub issues page</a>.
+    </p>
+  </div>
+</main>
+
+<footer class="border-t border-line bg-ink">
+  <div class="mx-auto flex max-w-6xl flex-col gap-6 px-5 py-10 sm:flex-row sm:items-center sm:px-8">
+    <div class="flex items-center gap-2.5">
+      <span class="h-[6px] w-[6px] rounded-[2px] bg-crimson-lift opacity-90"></span>
+      <span class="mono text-[9px] text-faint">Upscaly</span>
+    </div>
+    <div class="grow"></div>
+    <div class="flex flex-wrap items-center gap-x-7 gap-y-3">
+      <a href="privacy.html" class="mono text-[9px] text-paper">Privacy</a>
+      <a href="terms.html" class="mono text-[9px] text-faint transition-colors hover:text-paper">Terms</a>
+      <a href="https://github.com/shayann07/Upscaly" class="mono text-[9px] text-faint transition-colors hover:text-paper">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

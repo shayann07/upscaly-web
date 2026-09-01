@@ -1,0 +1,223 @@
+/* Upscaly — shared site styling.
+   Tokens lifted directly from the apps' own design system so the site and the
+   product read as one thing: warm near-black ground, crimson accent, Archivo
+   for voice, Martian Mono for the instrument labels. */
+
+:root {
+  --ink: #0b0a09;
+  --ink-raised: #131110;
+  --ink-stripe: #171514;
+  --paper: #f2f0ed;
+  --muted: #a49c92;
+  --faint: #6b655e;
+  --dim: #55504a;
+  --line: #26221e;
+  --line-soft: #1c1917;
+  --crimson: #a80b24;
+  --crimson-lift: #e0566a;
+  --crimson-glow: rgba(168, 11, 36, 0.18);
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: 'Archivo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.55;
+  overflow-x: hidden;
+}
+
+/* The app's own backdrop: fine diagonal hairline stripes over near-black. */
+.stripe-ground {
+  background-image: repeating-linear-gradient(
+    115deg,
+    var(--ink-stripe) 0 13px,
+    var(--ink) 13px 26px
+  );
+}
+
+.mono {
+  font-family: 'Martian Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.eyebrow {
+  font-family: 'Martian Mono', ui-monospace, monospace;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+h1, h2, h3 {
+  letter-spacing: -0.032em;
+  text-wrap: balance;
+  margin: 0;
+  font-weight: 800;
+}
+
+a { color: inherit; }
+
+::selection {
+  background: var(--crimson);
+  color: var(--paper);
+}
+
+:focus-visible {
+  outline: 2px solid var(--crimson-lift);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ── the comparison slider: the product's own core interaction, on the web ── */
+
+.compare {
+  position: relative;
+  overflow: hidden;
+  touch-action: none;
+  cursor: ew-resize;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.compare img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+}
+
+.compare .before-layer {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  will-change: clip-path;
+}
+
+.compare .divider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(242, 240, 237, 0.6);
+  pointer-events: none;
+  will-change: left;
+}
+
+.compare .knob {
+  position: absolute;
+  top: 50%;
+  width: 46px;
+  height: 46px;
+  margin-top: -23px;
+  margin-left: -23px;
+  border-radius: 999px;
+  background: rgba(11, 10, 9, 0.9);
+  border: 1px solid rgba(242, 240, 237, 0.25);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.55);
+  will-change: left;
+}
+
+.compare .tag {
+  position: absolute;
+  bottom: 12px;
+  font-family: 'Martian Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.95);
+  pointer-events: none;
+}
+
+/* ── scroll reveal ── */
+
+/* Progressive enhancement: content is visible by default and only starts
+   hidden once JS has confirmed it can reveal it again. A broken observer,
+   a JS error, or a bot without scripting then still gets a readable page
+   instead of a blank one. */
+.reveal {
+  opacity: 1;
+  transform: none;
+}
+
+html.js-reveal .reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html.js-reveal .reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}
+
+/* ── prose, for the policy pages ── */
+
+.prose {
+  max-width: 68ch;
+}
+
+.prose h2 {
+  font-size: 15px;
+  font-family: 'Martian Mono', monospace;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--crimson-lift);
+  margin: 44px 0 14px;
+}
+
+.prose h2:first-of-type { margin-top: 0; }
+
+.prose p {
+  color: var(--muted);
+  font-size: 15.5px;
+  line-height: 1.75;
+  margin: 0 0 16px;
+}
+
+.prose strong { color: var(--paper); font-weight: 600; }
+
+.prose ul {
+  margin: 0 0 16px;
+  padding-left: 18px;
+  color: var(--muted);
+  font-size: 15.5px;
+  line-height: 1.75;
+}
+
+.prose li { margin-bottom: 9px; }
+
+.prose a {
+  color: var(--crimson-lift);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(224, 86, 106, 0.4);
+}
+
+.prose a:hover { text-decoration-color: var(--crimson-lift); }

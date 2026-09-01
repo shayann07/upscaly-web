@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Upscaly — AI upscaling that never leaves your device</title>
+<meta name="description" content="Free, offline AI image and video upscaling powered directly by your GPU. Nothing you upscale is ever uploaded. Windows desktop app, Android coming soon.">
+<link rel="icon" href="assets/icon-512.png">
+<meta name="theme-color" content="#0b0a09">
+
+<meta property="og:title" content="Upscaly — AI upscaling that never leaves your device">
+<meta property="og:description" content="Free, offline AI image and video upscaling powered directly by your GPU. Nothing you upscale is ever uploaded.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://upscaly.shayxo.dev">
+<meta property="og:image" content="https://upscaly.shayxo.dev/assets/icon-512.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Martian+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink: '#0b0a09',
+          'ink-raised': '#131110',
+          paper: '#f2f0ed',
+          muted: '#a49c92',
+          faint: '#6b655e',
+          dim: '#55504a',
+          line: '#26221e',
+          crimson: '#a80b24',
+          'crimson-lift': '#e0566a',
+        },
+        fontFamily: {
+          sans: ['Archivo', 'system-ui', 'sans-serif'],
+          mono: ['"Martian Mono"', 'ui-monospace', 'monospace'],
+        },
+      },
+    },
+  };
+</script>
+</head>
+<body class="stripe-ground">
+
+<!-- ── nav ── -->
+<header class="sticky top-0 z-50 border-b border-line/70 backdrop-blur-xl bg-ink/80">
+  <nav class="mx-auto flex max-w-6xl items-center gap-3 px-5 py-3.5 sm:px-8">
+    <!-- Wordmark, not the cube: the mark's hairline edges fall below a pixel
+         at nav size and collapse into a smudge on this ground. It appears
+         large further down, where it actually reads. -->
+    <a href="/" class="flex items-center gap-2.5 shrink-0">
+      <span class="h-[7px] w-[7px] rounded-[2px] bg-crimson-lift"></span>
+      <span class="text-[15px] font-bold tracking-[-0.02em]">Upscaly</span>
+    </a>
+    <div class="grow"></div>
+    <div class="hidden items-center gap-7 sm:flex">
+      <a href="#apps" class="mono text-[10px] text-muted transition-colors hover:text-paper">Apps</a>
+      <a href="#privacy" class="mono text-[10px] text-muted transition-colors hover:text-paper">Privacy</a>
+      <a href="https://github.com/shayann07/Upscaly" class="mono text-[10px] text-muted transition-colors hover:text-paper">GitHub</a>
+    </div>
+    <a href="https://github.com/shayann07/Upscaly/releases/latest"
+       class="ml-4 rounded-full border border-line bg-ink-raised px-4 py-2 text-[12.5px] font-semibold transition-colors hover:border-crimson-lift/50 hover:text-crimson-lift">
+      Download
+    </a>
+  </nav>
+</header>
+
+<!-- ── hero ── -->
+<section class="relative overflow-hidden">
+  <div class="pointer-events-none absolute -left-40 top-0 h-[640px] w-[640px] rounded-full"
+       style="background: radial-gradient(circle, rgba(168,11,36,0.16) 0%, transparent 65%);"></div>
+
+  <div class="relative mx-auto max-w-6xl px-5 pb-20 pt-16 sm:px-8 sm:pb-28 sm:pt-24">
+    <div class="grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
+
+      <div>
+        <div class="eyebrow reveal">On-device AI upscaling</div>
+        <h1 class="reveal mt-5 text-[clamp(2.3rem,5.4vw,3.7rem)] font-extrabold leading-[1.0]">
+          Sharper images.<br>
+          <span class="text-crimson-lift">Nothing uploaded.</span>
+        </h1>
+        <p class="reveal mt-6 max-w-[46ch] text-[17px] leading-relaxed text-muted">
+          Upscaly runs real AI upscaling models directly on your own GPU. No account, no cloud,
+          no queue — and not one byte of what you upscale ever leaves the machine it's on.
+        </p>
+
+        <div class="reveal mt-9 flex flex-wrap items-center gap-3">
+          <a href="https://github.com/shayann07/Upscaly/releases/download/v1.0.7/Upscaly-Studio_1.0.7_x64-setup.exe"
+             class="group inline-flex items-center gap-3 rounded-xl bg-paper px-6 py-3.5 font-semibold text-ink transition-transform hover:-translate-y-0.5">
+            <svg viewBox="0 0 24 24" class="h-[18px] w-[18px]" fill="currentColor" aria-hidden="true">
+              <path d="M3 5.6 10.2 4.6v6.9H3zM11.4 4.4 21 3v8.5h-9.6zM3 12.6h7.2v6.9L3 18.4zM11.4 12.6H21V21l-9.6-1.4z"/>
+            </svg>
+            Download for Windows
+          </a>
+          <a href="#apps"
+             class="inline-flex items-center gap-2 rounded-xl border border-line px-6 py-3.5 font-semibold text-muted transition-colors hover:border-crimson-lift/50 hover:text-paper">
+            Android
+            <span class="mono text-[9px] text-crimson-lift">In testing</span>
+          </a>
+        </div>
+
+        <p class="reveal mono mt-5 text-[9.5px] text-faint">
+          Free · v1.0.7 · 5.4 MB · Windows 10/11 x64
+        </p>
+      </div>
+
+      <!-- live before/after: the app's own comparison interaction -->
+      <div class="reveal">
+        <div class="compare aspect-square w-full overflow-hidden rounded-2xl border border-line shadow-[0_30px_90px_rgba(0,0,0,0.6)]"
+             id="hero-compare" role="group" aria-label="Before and after upscaling comparison">
+          <img src="assets/sample-after.jpg" alt="Photo after AI upscaling" fetchpriority="high">
+          <div class="before-layer" data-before>
+            <img src="assets/sample-before.jpg" alt="The same photo before upscaling">
+          </div>
+          <div class="divider" data-divider></div>
+          <div class="knob" data-knob>
+            <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="#f2f0ed" stroke-width="1.9"
+                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M9 6 4 12l5 6M15 6l5 6-5 6"/>
+            </svg>
+          </div>
+          <span class="tag left-3 text-paper/85">Original</span>
+          <span class="tag right-3 text-crimson-lift">4× upscaled</span>
+        </div>
+        <p class="mono mt-3 text-center text-[9px] text-faint">Drag to compare</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── proof strip ── -->
+<section class="border-y border-line bg-ink/60">
+  <div class="mx-auto grid max-w-6xl grid-cols-2 divide-x divide-line/60 px-5 sm:px-8 md:grid-cols-4">
+    <div class="reveal px-2 py-7 md:px-6">
+      <div class="text-[26px] font-extrabold tracking-[-0.03em]">100%</div>
+      <div class="eyebrow mt-1.5">On-device</div>
+    </div>
+    <div class="reveal px-2 py-7 md:px-6">
+      <div class="text-[26px] font-extrabold tracking-[-0.03em]">10</div>
+      <div class="eyebrow mt-1.5">AI models</div>
+    </div>
+    <div class="reveal px-2 py-7 md:px-6">
+      <div class="text-[26px] font-extrabold tracking-[-0.03em]">2×–4×</div>
+      <div class="eyebrow mt-1.5">Scale factors</div>
+    </div>
+    <div class="reveal px-2 py-7 md:px-6">
+      <div class="text-[26px] font-extrabold tracking-[-0.03em] text-crimson-lift">0</div>
+      <div class="eyebrow mt-1.5">Bytes uploaded</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── how it works ── -->
+<section class="mx-auto max-w-6xl px-5 py-24 sm:px-8">
+  <div class="eyebrow reveal">How it works</div>
+  <h2 class="reveal mt-4 max-w-[20ch] text-[clamp(1.9rem,4vw,2.9rem)] leading-[1.08]">
+    Three steps, then your GPU does the rest.
+  </h2>
+
+  <ol class="mt-14 grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-3">
+    <li class="reveal bg-ink-raised p-7">
+      <div class="mono text-[11px] font-semibold text-crimson-lift">01</div>
+      <h3 class="mt-4 text-[17px] font-bold">Pick a photo</h3>
+      <p class="mt-2.5 text-[14.5px] leading-relaxed text-muted">
+        Choose an image — or a video, on desktop. Your originals are never modified;
+        every result is written as a new file.
+      </p>
+    </li>
+    <li class="reveal bg-ink-raised p-7">
+      <div class="mono text-[11px] font-semibold text-crimson-lift">02</div>
+      <h3 class="mt-4 text-[17px] font-bold">Choose a model</h3>
+      <p class="mt-2.5 text-[14.5px] leading-relaxed text-muted">
+        Ten models tuned for different work — photography, portraits, line art,
+        illustration — each downloaded only if you actually use it.
+      </p>
+    </li>
+    <li class="reveal bg-ink-raised p-7">
+      <div class="mono text-[11px] font-semibold text-crimson-lift">03</div>
+      <h3 class="mt-4 text-[17px] font-bold">Run it locally</h3>
+      <p class="mt-2.5 text-[14.5px] leading-relaxed text-muted">
+        Inference runs on your own GPU through Vulkan compute. No upload,
+        no server queue, no per-image cost.
+      </p>
+    </li>
+  </ol>
+</section>
+
+<!-- ── the two apps ── -->
+<section id="apps" class="border-t border-line bg-ink/60 scroll-mt-16">
+  <div class="mx-auto max-w-6xl px-5 py-24 sm:px-8">
+    <div class="eyebrow reveal">Get Upscaly</div>
+    <h2 class="reveal mt-4 text-[clamp(1.9rem,4vw,2.9rem)]">Two apps, one engine.</h2>
+
+    <div class="mt-14 grid gap-6 lg:grid-cols-2">
+
+      <!-- desktop -->
+      <div class="reveal flex flex-col rounded-2xl border border-line bg-ink-raised p-8">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <div class="eyebrow">Desktop</div>
+            <h3 class="mt-2.5 text-[22px] font-bold">Upscaly Studio</h3>
+          </div>
+          <span class="mono shrink-0 rounded-full border border-line px-3 py-1.5 text-[9px] text-muted">v1.0.7</span>
+        </div>
+
+        <p class="mt-5 text-[15px] leading-relaxed text-muted">
+          The full desktop app for Windows. Handles both images and video, batches
+          entire folders, and gives you direct control over models, scale and tiling.
+        </p>
+
+        <ul class="mono mt-6 space-y-2.5 text-[9.5px] text-faint">
+          <li class="flex items-center gap-2.5"><span class="text-crimson-lift">▪</span> Images and video</li>
+          <li class="flex items-center gap-2.5"><span class="text-crimson-lift">▪</span> Batch processing</li>
+          <li class="flex items-center gap-2.5"><span class="text-crimson-lift">▪</span> Vulkan GPU compute</li>
+        </ul>
+
+        <div class="grow"></div>
+
+        <a href="https://github.com/shayann07/Upscaly/releases/download/v1.0.7/Upscaly-Studio_1.0.7_x64-setup.exe"
+           class="mt-8 inline-flex items-center justify-center gap-2.5 rounded-xl bg-paper px-6 py-3.5 font-semibold text-ink transition-transform hover:-translate-y-0.5">
+          Download for Windows
+        </a>
+        <p class="mono mt-3 text-center text-[9px] text-faint">5.4 MB · x64 installer · Free</p>
+      </div>
+
+      <!-- mobile -->
+      <div class="reveal flex flex-col rounded-2xl border border-line bg-ink-raised p-8">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <div class="eyebrow">Mobile</div>
+            <h3 class="mt-2.5 text-[22px] font-bold">Upscaly for Android</h3>
+          </div>
+          <span class="mono shrink-0 rounded-full border border-crimson-lift/30 bg-crimson/10 px-3 py-1.5 text-[9px] text-crimson-lift">Testing</span>
+        </div>
+
+        <p class="mt-5 text-[15px] leading-relaxed text-muted">
+          The same engine, rebuilt for a phone. Pick a photo, drag to compare the result,
+          pinch to inspect real detail — all of it running on the phone's own GPU.
+        </p>
+
+        <ul class="mono mt-6 space-y-2.5 text-[9.5px] text-faint">
+          <li class="flex items-center gap-2.5"><span class="text-crimson-lift">▪</span> Photos, on-device</li>
+          <li class="flex items-center gap-2.5"><span class="text-crimson-lift">▪</span> Drag &amp; pinch comparison</li>
+          <li class="flex items-center gap-2.5"><span class="text-crimson-lift">▪</span> Android 8.0+ · arm64</li>
+        </ul>
+
+        <div class="grow"></div>
+
+        <div class="mt-8 rounded-xl border border-line px-6 py-3.5 text-center font-semibold text-muted">
+          Coming to Google Play
+        </div>
+        <p class="mono mt-3 text-center text-[9px] text-faint">Currently in closed testing</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── privacy ── -->
+<section id="privacy" class="relative overflow-hidden border-t border-line scroll-mt-16">
+  <div class="pointer-events-none absolute right-0 top-1/2 h-[560px] w-[560px] -translate-y-1/2 rounded-full"
+       style="background: radial-gradient(circle, rgba(168,11,36,0.13) 0%, transparent 66%);"></div>
+
+  <div class="relative mx-auto max-w-6xl px-5 py-24 sm:px-8">
+    <div class="grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
+      <div>
+        <div class="eyebrow reveal">Privacy</div>
+        <h2 class="reveal mt-4 text-[clamp(1.9rem,4vw,2.9rem)] leading-[1.08]">
+          Private because of how it's built, not because of a policy.
+        </h2>
+      </div>
+
+      <div class="space-y-7">
+        <p class="reveal text-[16.5px] leading-relaxed text-muted">
+          Plenty of upscalers promise privacy in their terms. Upscaly doesn't need to —
+          the work physically happens on your hardware, so there's no server that
+          <em class="text-paper not-italic">could</em> keep your images even if someone wanted it to.
+        </p>
+
+        <div class="reveal grid gap-px overflow-hidden rounded-xl border border-line bg-line sm:grid-cols-2">
+          <div class="bg-ink-raised p-6">
+            <div class="mono text-[9px] text-crimson-lift">No accounts</div>
+            <p class="mt-2.5 text-[14px] leading-relaxed text-muted">No sign-up, no login, no email. Install it and it works.</p>
+          </div>
+          <div class="bg-ink-raised p-6">
+            <div class="mono text-[9px] text-crimson-lift">No analytics</div>
+            <p class="mt-2.5 text-[14px] leading-relaxed text-muted">No telemetry or crash-reporting SDK anywhere in either app.</p>
+          </div>
+          <div class="bg-ink-raised p-6">
+            <div class="mono text-[9px] text-crimson-lift">No uploads</div>
+            <p class="mt-2.5 text-[14px] leading-relaxed text-muted">The only thing downloaded is the model file you choose.</p>
+          </div>
+          <div class="bg-ink-raised p-6">
+            <div class="mono text-[9px] text-crimson-lift">Originals untouched</div>
+            <p class="mt-2.5 text-[14px] leading-relaxed text-muted">Results save as new files. Your source images stay exactly as they were.</p>
+          </div>
+        </div>
+
+        <a href="privacy.html" class="reveal mono inline-block text-[10px] text-crimson-lift underline decoration-crimson-lift/40 underline-offset-4 transition-colors hover:decoration-crimson-lift">
+          Read the full privacy policy
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── closing ── -->
+<section class="border-t border-line">
+  <div class="mx-auto max-w-6xl px-5 py-24 text-center sm:px-8">
+    <img src="assets/mark.png" alt="" class="reveal mx-auto h-28 w-28">
+    <h2 class="reveal mt-8 text-[clamp(1.9rem,4.4vw,3rem)]">Try it on a photo you care about.</h2>
+    <p class="reveal mx-auto mt-5 max-w-[44ch] text-[16px] leading-relaxed text-muted">
+      It's free, it's offline, and nothing you feed it goes anywhere.
+    </p>
+    <a href="https://github.com/shayann07/Upscaly/releases/latest"
+       class="reveal mt-9 inline-flex items-center gap-3 rounded-xl bg-paper px-7 py-4 font-semibold text-ink transition-transform hover:-translate-y-0.5">
+      Download Upscaly Studio
+    </a>
+  </div>
+</section>
+
+<!-- ── footer ── -->
+<footer class="border-t border-line bg-ink">
+  <div class="mx-auto flex max-w-6xl flex-col gap-6 px-5 py-10 sm:flex-row sm:items-center sm:px-8">
+    <div class="flex items-center gap-2.5">
+      <span class="h-[6px] w-[6px] rounded-[2px] bg-crimson-lift opacity-90"></span>
+      <span class="mono text-[9px] text-faint">Upscaly</span>
+    </div>
+    <div class="grow"></div>
+    <div class="flex flex-wrap items-center gap-x-7 gap-y-3">
+      <a href="privacy.html" class="mono text-[9px] text-faint transition-colors hover:text-paper">Privacy</a>
+      <a href="terms.html" class="mono text-[9px] text-faint transition-colors hover:text-paper">Terms</a>
+      <a href="https://github.com/shayann07/Upscaly" class="mono text-[9px] text-faint transition-colors hover:text-paper">GitHub</a>
+      <a href="https://github.com/shayann07/Upscaly/releases" class="mono text-[9px] text-faint transition-colors hover:text-paper">Releases</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  /* Before/after slider — pointer-driven, painted straight onto the DOM so a
+     drag never waits on anything but the compositor. */
+  (function () {
+    var root = document.getElementById('hero-compare');
+    if (!root) return;
+
+    var beforeLayer = root.querySelector('[data-before]');
+    var divider = root.querySelector('[data-divider]');
+    var knob = root.querySelector('[data-knob]');
+    var dragging = false;
+
+    function paint(pct) {
+      beforeLayer.style.clipPath = 'inset(0 ' + (100 - pct) + '% 0 0)';
+      divider.style.left = pct + '%';
+      knob.style.left = pct + '%';
+    }
+
+    function pctFrom(clientX) {
+      var r = root.getBoundingClientRect();
+      if (!r.width) return 50;
+      return Math.max(2, Math.min(98, ((clientX - r.left) / r.width) * 100));
+    }
+
+    root.addEventListener('pointerdown', function (e) {
+      dragging = true;
+      root.setPointerCapture(e.pointerId);
+      paint(pctFrom(e.clientX));
+    });
+
+    root.addEventListener('pointermove', function (e) {
+      if (dragging) paint(pctFrom(e.clientX));
+    });
+
+    function end(e) {
+      dragging = false;
+      if (root.hasPointerCapture && root.hasPointerCapture(e.pointerId)) {
+        root.releasePointerCapture(e.pointerId);
+      }
+    }
+    root.addEventListener('pointerup', end);
+    root.addEventListener('pointercancel', end);
+
+    paint(50);
+  })();
+
+  /* Scroll reveal, staggered per section so groups arrive together.
+     Nothing is hidden until we know we can bring it back: the js-reveal
+     class is what arms the hidden state, and a safety timer clears every
+     remaining item in case an observer callback never fires. */
+  (function () {
+    if (!('IntersectionObserver' in window)) return;
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    var items = document.querySelectorAll('.reveal');
+    if (!items.length) return;
+
+    document.documentElement.classList.add('js-reveal');
+
+    function show(el) { el.classList.add('in'); }
+
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry, i) {
+        if (!entry.isIntersecting) return;
+        var el = entry.target;
+        setTimeout(function () { show(el); }, Math.min(i, 5) * 70);
+        io.unobserve(el);
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+
+    items.forEach(function (el) { io.observe(el); });
+
+    setTimeout(function () { items.forEach(show); }, 4000);
+  })();
+</script>
+
+</body>
+</html>

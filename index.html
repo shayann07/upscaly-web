@@ -51,9 +51,19 @@
   <nav class="mx-auto flex max-w-6xl items-center gap-3 px-5 py-3.5 sm:px-8">
     <!-- Wordmark, not the cube: the mark's hairline edges fall below a pixel
          at nav size and collapse into a smudge on this ground. It appears
-         large further down, where it actually reads. -->
-    <a href="/" class="flex items-center gap-2.5 shrink-0">
-      <span class="h-[7px] w-[7px] rounded-[2px] bg-crimson-lift"></span>
+         large further down, where it actually reads. The facet mark here is
+         a small vector diamond echoing the cube's lit front face -- a shape
+         that survives downscaling, unlike the hairline wireframe itself. -->
+    <a href="/" class="flex items-center gap-2 shrink-0">
+      <svg viewBox="0 0 16 16" class="h-[15px] w-[15px]" aria-hidden="true">
+        <defs>
+          <linearGradient id="navFacet" x1="3" y1="2" x2="13" y2="14" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#e0566a"/>
+            <stop offset="1" stop-color="#a80b24"/>
+          </linearGradient>
+        </defs>
+        <path d="M8 1.2 14.3 8 8 14.8 1.7 8Z" fill="url(#navFacet)"/>
+      </svg>
       <span class="text-[15px] font-bold tracking-[-0.02em]">Upscaly</span>
     </a>
     <div class="grow"></div>
@@ -78,17 +88,17 @@
     <div class="grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
 
       <div>
-        <div class="eyebrow reveal">On-device AI upscaling</div>
-        <h1 class="reveal mt-5 text-[clamp(2.3rem,5.4vw,3.7rem)] font-extrabold leading-[1.0]">
+        <div class="eyebrow">On-device AI upscaling</div>
+        <h1 class="mt-5 text-[clamp(2.3rem,5.4vw,3.7rem)] font-extrabold leading-[1.0]">
           Sharper images.<br>
           <span class="text-crimson-lift">Nothing uploaded.</span>
         </h1>
-        <p class="reveal mt-6 max-w-[46ch] text-[17px] leading-relaxed text-muted">
+        <p class="mt-6 max-w-[46ch] text-[17px] leading-relaxed text-muted">
           Upscaly runs real AI upscaling models directly on your own GPU. No account, no cloud,
           no queue — and not one byte of what you upscale ever leaves the machine it's on.
         </p>
 
-        <div class="reveal mt-9 flex flex-wrap items-center gap-3">
+        <div class="mt-9 flex flex-wrap items-center gap-3">
           <a href="https://github.com/shayann07/Upscaly/releases/download/v1.0.7/Upscaly-Studio_1.0.7_x64-setup.exe"
              class="group inline-flex items-center gap-3 rounded-xl bg-paper px-6 py-3.5 font-semibold text-ink transition-transform hover:-translate-y-0.5">
             <svg viewBox="0 0 24 24" class="h-[18px] w-[18px]" fill="currentColor" aria-hidden="true">
@@ -103,13 +113,14 @@
           </a>
         </div>
 
-        <p class="reveal mono mt-5 text-[9.5px] text-faint">
+        <p class="mono mt-5 text-[9.5px] text-faint">
           Free · v1.0.7 · 5.4 MB · Windows 10/11 x64
         </p>
       </div>
 
-      <!-- live before/after: the app's own comparison interaction -->
-      <div class="reveal">
+      <!-- live before/after: the app's own comparison interaction. Above the
+           fold, so it shows immediately -- no .reveal here either. -->
+      <div>
         <div class="compare aspect-square w-full overflow-hidden rounded-2xl border border-line shadow-[0_30px_90px_rgba(0,0,0,0.6)]"
              id="hero-compare" role="group" aria-label="Before and after upscaling comparison">
           <img src="assets/sample-after.jpg" alt="Photo after AI upscaling" fetchpriority="high">
@@ -327,8 +338,16 @@
 <!-- ── footer ── -->
 <footer class="border-t border-line bg-ink">
   <div class="mx-auto flex max-w-6xl flex-col gap-6 px-5 py-10 sm:flex-row sm:items-center sm:px-8">
-    <div class="flex items-center gap-2.5">
-      <span class="h-[6px] w-[6px] rounded-[2px] bg-crimson-lift opacity-90"></span>
+    <div class="flex items-center gap-2">
+      <svg viewBox="0 0 16 16" class="h-[9px] w-[9px]" aria-hidden="true">
+        <defs>
+          <linearGradient id="footerFacet" x1="3" y1="2" x2="13" y2="14" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#e0566a"/>
+            <stop offset="1" stop-color="#a80b24"/>
+          </linearGradient>
+        </defs>
+        <path d="M8 1.2 14.3 8 8 14.8 1.7 8Z" fill="url(#footerFacet)"/>
+      </svg>
       <span class="mono text-[9px] text-faint">Upscaly</span>
     </div>
     <div class="grow"></div>

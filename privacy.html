@@ -60,13 +60,13 @@
 <main class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24">
   <div class="eyebrow">Legal</div>
   <h1 class="mt-4 text-[clamp(2.1rem,5vw,3.2rem)]">Privacy Policy</h1>
-  <p class="mono mt-5 text-[9.5px] text-faint">Last updated: 2 September 2026</p>
+  <p class="mono mt-5 text-[9.5px] text-faint">Last updated: 29 September 2026</p>
 
   <div class="prose mt-14">
     <p>
       Upscaly is a photo and video upscaling tool that runs entirely on your own device.
       This policy explains, in plain terms, what that means for your data. It covers both
-      <strong>Upscaly Studio</strong> for Windows and <strong>Upscaly for Android</strong>.
+      <strong>Upscaly for Windows</strong> and <strong>Upscaly for Android</strong>.
     </p>
 
     <h2>What Upscaly does with your files</h2>
@@ -88,6 +88,19 @@
       upscale, how often you use the app, or who you are, because none of that information
       is ever sent anywhere.
     </p>
+    <p>
+      Upscaly does need access to the photos and videos you choose to open, in order to
+      upscale them. That access happens only on your device, only for the files you select,
+      and the files never leave it.
+    </p>
+
+    <h2>Purchases</h2>
+    <p>
+      Upscaly for Windows is bought through the Microsoft Store, and Upscaly for Android through
+      Google Play. Payment, trials and licensing are handled entirely by Microsoft or Google under
+      their own privacy statements. We never see your payment details. The stores give us
+      aggregated sales reports; they do not identify you to us.
+    </p>
 
     <h2>Network activity</h2>
     <p>
@@ -100,10 +113,14 @@
         file name, or personal information is included in the request.
       </li>
       <li>
-        <strong>Checking for app updates</strong> (desktop only), which retrieves a small
-        version file from the app's public GitHub releases.
+        <strong>Downloading FFmpeg</strong> (Windows only), the video toolkit used to read and
+        write video files. It is fetched from its public upstream release on GitHub the first time
+        you upscale a video. No image, file name, or personal information is included in the request.
       </li>
     </ul>
+    <p>
+      App updates on Windows are delivered by the Microsoft Store, not by Upscaly itself.
+    </p>
     <p>
       As with any web request, the servers involved (GitHub's) may log standard technical
       information such as your IP address, in line with their own privacy policies. We do
@@ -148,8 +165,7 @@
 
     <h2>Contact</h2>
     <p>
-      Questions about this policy can be raised on the project's
-      <a href="https://github.com/shayann07/Upscaly/issues">GitHub issues page</a>.
+      Questions about this policy: <a href="mailto:hello@shayxo.dev">hello@shayxo.dev</a>.
     </p>
   </div>
 </main>
@@ -172,7 +188,7 @@
     <div class="flex flex-wrap items-center gap-x-7 gap-y-3">
       <a href="privacy.html" class="mono text-[9px] text-paper">Privacy</a>
       <a href="terms.html" class="mono text-[9px] text-faint transition-colors hover:text-paper">Terms</a>
-      <a href="https://github.com/shayann07/Upscaly" class="mono text-[9px] text-faint transition-colors hover:text-paper">GitHub</a>
+      <a href="mailto:hello@shayxo.dev" class="mono text-[9px] text-faint transition-colors hover:text-paper">Support</a>
     </div>
   </div>
 </footer>

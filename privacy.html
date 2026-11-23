@@ -60,7 +60,7 @@
 <main class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24">
   <div class="eyebrow">Legal</div>
   <h1 class="mt-4 text-[clamp(2.1rem,5vw,3.2rem)]">Privacy Policy</h1>
-  <p class="mono mt-5 text-[9.5px] text-faint">Last updated: 4 October 2026</p>
+  <p class="mono mt-5 text-[9.5px] text-faint">Last updated: 23 November 2026</p>
 
   <div class="prose mt-14">
     <p>
@@ -83,10 +83,19 @@
 
     <h2>What we collect</h2>
     <p>
-      <strong>Nothing.</strong> Upscaly has no user accounts, no login, and no analytics,
-      telemetry, or crash-reporting service built into it. We have no way to see what you
-      upscale, how often you use the app, or who you are, because none of that information
-      is ever sent anywhere.
+      <strong>Nothing, unless you turn on crash reports.</strong> Upscaly has no user accounts,
+      no login, and no analytics or telemetry. We have no way to see what you upscale, how
+      often you use the app, or who you are.
+    </p>
+    <p>
+      <strong>Crash reports (Windows, off by default).</strong> If you turn on
+      <em>Send crash reports</em> in Settings and Upscaly crashes, the next launch sends one
+      report to Sentry, our crash-reporting provider, which stores it in the EU. A report holds
+      the app version, the Windows version, the error and where in Upscaly's code it happened,
+      and, for the upscaling engine, the graphics card name, the model and the image size.
+      Folder paths, file names, your user name and your pictures are removed before sending.
+      IP addresses are not stored, though Sentry may derive an approximate country or city
+      from the connection. Turn the setting off at any time to stop sending.
     </p>
     <p>
       Upscaly does need access to the photos and videos you choose to open, in order to
@@ -104,7 +113,7 @@
 
     <h2>Network activity</h2>
     <p>
-      Upscaly makes network requests for two purposes only:
+      Upscaly makes network requests for these purposes only:
     </p>
     <ul>
       <li>
@@ -116,6 +125,10 @@
         <strong>Downloading FFmpeg</strong> (Windows only), the video toolkit used to read and
         write video files. It is fetched from its public upstream release on GitHub the first time
         you upscale a video. No image, file name, or personal information is included in the request.
+      </li>
+      <li>
+        <strong>Sending crash reports</strong> (Windows, only if you turn them on), as described
+        above, to Sentry.
       </li>
     </ul>
     <p>

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Privacy Policy — Upscaly</title>
-<meta name="description" content="Upscaly's privacy policy. Everything is processed on your own device; nothing you upscale is ever uploaded, and no usage data is collected.">
+<meta name="description" content="Upscaly's privacy policy. Everything is processed on your own device; nothing you upscale is ever uploaded. Crash reports and usage data are optional and never include your photos.">
 <link rel="canonical" href="https://upscaly.shayxo.dev/privacy.html">
 <meta name="robots" content="index, follow">
 <link rel="icon" href="assets/icon-512.png">
@@ -83,9 +83,11 @@
 
     <h2>What we collect</h2>
     <p>
-      <strong>Nothing, unless you turn on crash reports.</strong> Upscaly has no user accounts,
-      no login, and no analytics or telemetry. We have no way to see what you upscale, how
-      often you use the app, or who you are.
+      <strong>Never your photos, videos or file names.</strong> Upscaly has no user accounts and
+      no login. On Windows, nothing is collected unless you turn on crash reports. On Android,
+      crash reports and anonymous usage data are on by default and can be switched off in
+      Settings (details in the Android section below). Either way we cannot see what you upscale,
+      and we do not know who you are.
     </p>
     <p>
       <strong>Crash reports (Windows, off by default).</strong> If you turn on
@@ -98,16 +100,16 @@
       from the connection. Turn the setting off at any time to stop sending.
     </p>
     <p>
-      <strong>Why we use crash reports.</strong> Only to find and fix crashes in Upscaly. They are
+      <strong>Why we use crash reports (Windows).</strong> Only to find and fix crashes in Upscaly. They are
       never used for advertising, never sold, and never combined with other data.
     </p>
     <p>
-      <strong>How they are kept safe.</strong> Reports are sent over an encrypted (HTTPS)
+      <strong>How they are kept safe (Windows).</strong> Reports are sent over an encrypted (HTTPS)
       connection and stored by Sentry in the EU. Only the Upscaly developer can read them.
       Sentry deletes each report automatically after at most 90 days.
     </p>
     <p>
-      <strong>Your choices and rights.</strong> Crash reports are sent only with your consent,
+      <strong>Your choices and rights (Windows).</strong> Crash reports are sent only with your consent,
       which you give by turning the setting on and can withdraw at any time by turning it off.
       If you live in the EU, UK or a similar jurisdiction, you have the right to ask what we hold
       about you, to have it corrected or deleted, and to complain to your data-protection
@@ -119,6 +121,54 @@
       Upscaly does need access to the photos and videos you choose to open, in order to
       upscale them. That access happens only on your device, only for the files you select,
       and the files never leave it.
+    </p>
+
+    <h2>Crash reports and usage data (Android)</h2>
+    <!-- Retention sources (checked 24 Nov 2026):
+         Crashlytics: https://firebase.google.com/support/privacy ("for 90 days before starting the process of removing it from live and backup systems").
+         Google Analytics 4 event data: 2 months by default, adjustable up to 14 months in the property settings
+         (options listed at https://support.google.com/analytics/answer/7667196; the 2-month default is not stated on the fetched page and should be confirmed in the Analytics admin console for this property). -->
+    <p>
+      From version 1.0.5, Upscaly for Android uses two Google Firebase services, with Google acting
+      as our service provider: <strong>Firebase Crashlytics</strong> for crash reports and
+      <strong>Google Analytics for Firebase</strong> for anonymous usage events. Both are
+      <strong>on by default</strong>. You can turn both off at any time in the app under
+      <em>Settings → Send crash reports and usage data</em>. Your photos are never part of either.
+    </p>
+    <p>
+      <strong>Crash reports (Crashlytics)</strong> contain: the error and where in the code it
+      happened (stack trace), the app version, your device model, the Android version, free memory
+      and disk space, the graphics (GPU/Vulkan) level and chip name, the AI model in use, and a
+      random Crashlytics installation ID. If an upscale or a model install fails without crashing,
+      a short error message is sent as well, with file paths removed.
+    </p>
+    <p>
+      <strong>Usage events (Analytics)</strong> are: upscale started and finished (model, scale,
+      a rough duration range and whether it succeeded), result saved, a promo card shown or used,
+      the review prompt requested, and a bundled model failing to install. Firebase also records its
+      automatic events (first open, app updates, session start), your device model, Android version,
+      app version, an approximate country that Google derives from your IP address (Google does not
+      store the IP address), and a random app-instance ID. They contain no photos, file names,
+      names, email addresses or precise location.
+    </p>
+    <p>
+      <strong>Why.</strong> Only to find and fix crashes and to see which features and models are
+      used, so we can improve Upscaly. The data is not used for advertising, not sold, and not
+      combined with other data. Upscaly for Android does not read your advertising ID.
+    </p>
+    <p>
+      <strong>How long it is kept.</strong> Google keeps Crashlytics crash data for 90 days before
+      it starts removing it from its live and backup systems. Analytics event data is kept for
+      2 months. Data is sent over an encrypted (HTTPS) connection, and only the Upscaly developer
+      can read it.
+    </p>
+    <p>
+      <strong>Your choices.</strong> Switch the setting off and nothing further is sent.
+      Uninstalling the app resets the random IDs. Because the IDs are random and carry no name or
+      account, we usually cannot tell which data is yours; to ask what we hold or to have it
+      deleted, email us the app version and the approximate date and we will help within 30 days.
+      Google's handling of this data is described in the Firebase privacy information at
+      <a href="https://firebase.google.com/support/privacy">firebase.google.com/support/privacy</a>.
     </p>
 
     <h2>Purchases</h2>
@@ -153,6 +203,10 @@
         <strong>Sending crash reports</strong> (Windows, only if you turn them on), as described
         above, to Sentry.
       </li>
+      <li>
+        <strong>Sending crash reports and usage events</strong> (Android, on by default, off in
+        Settings), as described above, to Google Firebase.
+      </li>
     </ul>
     <p>
       App updates on Windows are delivered by the Microsoft Store, not by Upscaly itself.
@@ -164,12 +218,12 @@
     </p>
 
     <h2>Permissions</h2>
-    <p>On Android, Upscaly requests only what it needs to function:</p>
+    <p>On Android, Upscaly requests only what it needs to function. It does not request the advertising ID permission:</p>
     <ul>
       <li><strong>Photos</strong> — Upscaly uses Android's system photo picker, which lets you choose individual photos without granting the app access to your whole photo library.</li>
       <li><strong>Notifications</strong> — used to show upscaling progress and to tell you when a job has finished.</li>
       <li><strong>Storage</strong> (older Android versions only) — used to save results to your gallery. Not required on modern Android versions.</li>
-      <li><strong>Internet</strong> — used only for the model downloads described above.</li>
+      <li><strong>Internet</strong> — used for the model downloads and for sending the optional crash reports and usage data described above.</li>
     </ul>
 
     <h2>Where your results are stored</h2>
@@ -188,21 +242,21 @@
 
     <h2>Children's privacy</h2>
     <p>
-      Upscaly is not directed at children and does not knowingly collect information from anyone,
-      of any age. Apart from the optional crash reports described above, it collects no
-      information at all.
+      Upscaly is not directed at children and does not knowingly collect personal information from
+      anyone, of any age. Apart from the optional crash reports and anonymous usage data described
+      above, which contain no names, accounts or photos, it collects no information at all.
     </p>
 
     <h2>Changes to this policy</h2>
     <p>
       If this policy changes, the updated version will be posted on this page with a new
-      "last updated" date. If a change affects what is collected, the app will ask before
+      "last updated" date. If a change affects what is collected, the app will tell you, and on Windows it will ask before
       sending anything new.
     </p>
 
     <h2>Contact</h2>
     <p>
-      Questions about this policy, or a request to see or delete crash reports:
+      Questions about this policy, or a request to see or delete crash reports or usage data:
       <a href="mailto:hello@shayxo.dev">hello@shayxo.dev</a>. Upscaly is published by Wexpa.
     </p>
   </div>
